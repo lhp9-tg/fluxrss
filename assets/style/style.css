@@ -1,0 +1,52 @@
+body {
+    height: 100vh;
+}
+.carousel img {
+    height: 10em;
+    width: 100%;
+    object-fit: cover;
+}
+
+nav img {
+    height: 1.5em;
+    cursor: pointer;
+}
+.actus{
+    height: 6em;
+    border-left: 5px solid blue
+}
+
+.actus-img img {
+    height: 5em;
+    object-fit: cover;
+}
+
+.actus-article {
+    overflow-y: hidden;
+}
+.culture{
+    height: 6em;
+    border-left: 5px solid green
+}
+
+.culture-img img {
+    height: 5em;
+    object-fit: cover;
+}
+
+.culture-article {
+    overflow-y: hidden;
+}
+.pixels{
+    height: 6em;
+    border-left: 5px solid red
+}
+
+.pixels-img img {
+    height: 5em;
+    object-fit: cover;
+}
+
+.pixels-article {
+    overflow-y: hidden;
+}
