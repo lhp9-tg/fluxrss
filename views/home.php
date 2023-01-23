@@ -37,7 +37,7 @@
         </button>
     </div>
 
-
+<!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="../assets/img/news-paper.png" alt=""></a>
@@ -62,32 +62,9 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <div class="row actus my-1 ">
 
-            <div class="actus-img col-4"><img src="../assets/img/news-paper.png" alt=""></div>
-            <div class="actus-article col-8">
-                <h3>titre</h3>
-                Lorem ipsum dolor sit, amet consectetur
-            </div>
-        </div>
-        <div class="row culture my-1 ">
 
-            <div class="culture-img col-4"><img src="../assets/img/news-paper.png" alt=""></div>
-            <div class="culture-article col-8">
-                <h3>titre</h3>
-                Lorem ipsum dolor sit, amet consectetur
-            </div>
-        </div>
-        <div class="row pixels my-1 ">
-
-            <div class="pixels-img col-4 "><img src="../assets/img/news-paper.png" alt=""></div>
-            <div class="pixels-article col-8">
-                <h3>titre</h3>
-                Lorem ipsum dolor sit, amet consectetur
-            </div>
-        </div>
-    </div>
+    <?php rss_reader('https://www.lemonde.fr/rss/une.xml'); ?>
     <footer>
 
 <div class="row">

@@ -12,8 +12,9 @@ nav img {
     cursor: pointer;
 }
 .actus{
-    height: 6em;
-    border-left: 5px solid blue
+    height: auto;
+    border-left: 5px solid blue;
+   
 }
 
 .actus-img img {
@@ -21,32 +22,25 @@ nav img {
     object-fit: cover;
 }
 
-.actus-article {
-    overflow-y: hidden;
-}
-.culture{
-    height: 6em;
-    border-left: 5px solid green
-}
 
-.culture-img img {
-    height: 5em;
-    object-fit: cover;
-}
 
-.culture-article {
-    overflow-y: hidden;
-}
-.pixels{
-    height: 6em;
-    border-left: 5px solid red
-}
 
-.pixels-img img {
-    height: 5em;
-    object-fit: cover;
+.footer {
+    height: 2em;
+    background-color: #f5f5f5;
+    color: #000;
+    text-align: center;
+    padding-top: 2em;
 }
-
-.pixels-article {
-    overflow-y: hidden;
+.date {
+    font-size: 0.8em;
+    color: #000;
+}
+.title {
+    font-size: 1em;
+    color: #000;
+    text-decoration: none;
+}
+.title:hover {
+    text-decoration: underline;
 }
