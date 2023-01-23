@@ -5,11 +5,12 @@
     <fieldset>
         <legend>Veuillez choisir 3 flux à suivre</legend>
 
-            <input type="checkbox" name="flux1" value="actualites" id="actualites"><label for='actualites'> Actualités <label><br>
-            <input type="checkbox" name="flux2" value="economie" id="economie"><label for='economie'> Economie <label><br>
-            <input type="checkbox" name="flux3" value="culture" id="culture"><label for='culture'> Culture <label><br>
-            <input type="checkbox" name="flux4" value="sport" id="sport"><label for='sport'> Sport <label><br>
-            <input type="checkbox" name="flux5" value="pixels" id="pixels"><label for='pixels'> Pixels <label><br>
+            
+            <input type="checkbox" name="flux1" value="actualites" id="actualites" <?php if (isset($_COOKIE['user']['flux']) && str_contains($_COOKIE['user']['flux'] , 'actualites')) echo 'checked' ?> ><label for='actualites'> Actualités </label><br>
+            <input type="checkbox" name="flux2" value="economie" id="economie" <?php if (isset($_COOKIE['user']['flux']) && str_contains($_COOKIE['user']['flux'] , 'economie')) echo 'checked' ?> ><label for='economie'> Economie </label><br>
+            <input type="checkbox" name="flux3" value="culture" id="culture" <?php if (isset($_COOKIE['user']['flux']) && str_contains($_COOKIE['user']['flux'] , 'culture')) echo 'checked' ?> ><label for='culture'> Culture </label><br>
+            <input type="checkbox" name="flux4" value="sport" id="sport" <?php if (isset($_COOKIE['user']['flux']) && str_contains($_COOKIE['user']['flux'] , 'sport')) echo 'checked' ?> ><label for='sport'> Sport </label><br>
+            <input type="checkbox" name="flux5" value="pixels" id="pixels" <?php if (isset($_COOKIE['user']['flux']) && str_contains($_COOKIE['user']['flux'] , 'pixels')) echo 'checked' ?> ><label for='pixels'> Pixels </label><br>
 
             <input type="submit" name='input1' value="Choisir">
     </fieldset>

@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $fluxchosen5 = $_POST['flux5'];
             array_push($fluxchosen, $fluxchosen5);
         }
-    
+
         if (count($fluxchosen) === 0) {
             echo 'Aucun flux choisit. Vous devez choisir 3 flux';
         }
@@ -50,6 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo 'Vous n\'avez pas choisi assez de flux. Vous devez choisir 3 flux';
         }
         else {
+            setcookie('user[flux]', serialize($fluxchosen), time() + 24*3600);
+            header ('Location: ../controllers/parameters-controller.php');
             echo 'Vous avez choisi les flux suivants : <br>';
             foreach ($fluxchosen as $flux) {
                 echo $flux . ' <br>';
