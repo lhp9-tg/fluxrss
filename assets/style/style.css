@@ -16,7 +16,9 @@ nav img {
     border-left: 5px solid blue;
    
 }
-
+.actus-img {
+    margin: auto;
+}
 .actus-img img {
     height: 5em;
     object-fit: cover;
