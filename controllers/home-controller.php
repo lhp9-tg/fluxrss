@@ -25,7 +25,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
             <div class="container mx-0">
              <div class="row culture my-2 mx-0">
     
-                <div class="actus-img col-4"><img src="../assets/img/news-paper.png" alt=""></div>
+                <div class="actus-img col-4"><img src="../assets/img/culture.png" alt=""></div>
                 <div class="actus-article col-8">
                    <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $item->pubDate . '</p>
@@ -39,7 +39,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
             <div class="container mx-0">
              <div class="row pixels my-2 mx-0">
     
-                <div class="actus-img col-4"><img src="../assets/img/news-paper.png" alt=""></div>
+                <div class="actus-img col-4"><img src="../assets/img/parametres-web.png" alt=""></div>
                 <div class="actus-article col-8">
                    <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $item->pubDate . '</p>
@@ -53,7 +53,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
             <div class="container mx-0">
              <div class="row economie my-2 mx-0">
     
-                <div class="actus-img col-4"><img src="../assets/img/news-paper.png" alt=""></div>
+                <div class="actus-img col-4"><img src="../assets/img/croissance.png" alt=""></div>
                 <div class="actus-article col-8">
                    <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $item->pubDate . '</p>
@@ -67,7 +67,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
             <div class="container mx-0">
              <div class="row sport my-2 mx-0">
     
-                <div class="actus-img col-4"><img src="../assets/img/news-paper.png" alt=""></div>
+                <div class="actus-img col-4"><img src="../assets/img/sports-de-balles.png" alt=""></div>
                 <div class="actus-article col-8">
                    <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $item->pubDate . '</p>
