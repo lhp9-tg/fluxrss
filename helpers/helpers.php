@@ -3,7 +3,7 @@
 $numbers = [6,9,12];
 $numberstring = ['six','nine','twelve'];
 
-$_COOKIE['user']['article'] = str_replace($numberstring, $numbers, $_COOKIE['user']['article']);
+// $_COOKIE['user']['article'] = str_replace($numberstring, $numbers, $_COOKIE['user']['article']);
 
 
 function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux RSS et l'image de la console
@@ -24,7 +24,8 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
             $i++;
 
             if ($rss->channel->link == 'https://www.lemonde.fr/rss/une.xml') {
-        
+                preg_match('/media:content url="(.*)" width/', $item->asXML(), $matches);
+                $photo_url = $matches[1];
                 $originalDate = $item->pubDate;
                 $newDate = date('d/m/Y H:i', strtotime($originalDate)); 
         
@@ -32,10 +33,11 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
             <div class="container mx-auto">
             <div class="row actus my-2 mx-0">
 
-                <div class="actus-img col-4"><img src="../assets/img/news-paper.png" alt=""></div>
+                <div class="actus-img col-4"><img src="'.$photo_url.'" alt=""></div>
                 <div class="actus-article col-8">
                 <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $newDate . '</p>
+            
                 </div>
             </div>
             </div>
