@@ -33,8 +33,8 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
             <div class="container mx-auto">
             <div class="row actus my-2 mx-0">
 
-                <div class="actus-img col-4"><img src="'.$photo_url.'" alt=""></div>
-                <div class="actus-article col-8">
+                <div class="actus-img col-12 col-lg-4"><img src="'.$photo_url.'" alt=""></div>
+                <div class="actus-article col-12 col-lg-8 mt-3">
                 <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $newDate . '</p>
             
@@ -44,15 +44,16 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
             <hr>
             ';
             } elseif ($rss->channel->link == 'https://www.lemonde.fr/culture/rss_full.xml') {
-
+                preg_match('/media:content url="(.*)" width/', $item->asXML(), $matches);
+                $photo_url = $matches[1];
                 $originalDate = $item->pubDate;
                 $newDate = date('d/m/Y H:i', strtotime($originalDate)); 
                 echo '
                 <div class="container mx-auto">
                 <div class="row culture my-2 mx-0">
 
-                    <div class="actus-img col-4"><img src="../assets/img/culture.png" alt=""></div>
-                    <div class="actus-article col-8">
+                    <div class="actus-img col-12 col-lg-4"><img src="'.$photo_url.'" alt=""></div>
+                    <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
                     </div>
@@ -61,15 +62,16 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                 <hr>
                 ';
             } elseif ($rss->channel->link == 'https://www.lemonde.fr/pixels/rss_full.xml') {
-
+                preg_match('/media:content url="(.*)" width/', $item->asXML(), $matches);
+                $photo_url = $matches[1];
                 $originalDate = $item->pubDate;
                 $newDate = date('d/m/Y H:i', strtotime($originalDate)); 
                 echo '
                 <div class="container mx-auto">
                 <div class="row pixels my-2 mx-0">
 
-                    <div class="actus-img col-4"><img src="../assets/img/parametres-web.png" alt=""></div>
-                    <div class="actus-article col-8">
+                    <div class="actus-img col-12 col-lg-4"><img src="'.$photo_url.'" alt=""></div>
+                    <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
                     </div>
@@ -78,15 +80,16 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                 <hr>
                 ';
             } elseif ($rss->channel->link == 'https://www.lemonde.fr/economie/rss_full.xml') {
-
+                preg_match('/media:content url="(.*)" width/', $item->asXML(), $matches);
+                $photo_url = $matches[1];
                 $originalDate = $item->pubDate;
                 $newDate = date('d/m/Y H:i', strtotime($originalDate)); 
                 echo '
                 <div class="container mx-auto">
                 <div class="row economie my-2 mx-0">
 
-                    <div class="actus-img col-4"><img src="../assets/img/croissance.png" alt=""></div>
-                    <div class="actus-article col-8">
+                    <div class="actus-img col-12 col-lg-4"><img src="'.$photo_url.'" alt=""></div>
+                    <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
                     </div>
@@ -95,7 +98,8 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                 <hr>
                 ';
             } elseif ($rss->channel->link == 'https://www.lemonde.fr/sport/rss_full.xml') {
-
+                preg_match('/media:content url="(.*)" width/', $item->asXML(), $matches);
+                $photo_url = $matches[1];
                 $originalDate = $item->pubDate;
                 $newDate = date('d/m/Y H:i', strtotime($originalDate)); 
 
@@ -103,8 +107,8 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                 <div class="container mx-auto">
                 <div class="row sport my-2 mx-0">
 
-                    <div class="actus-img col-4"><img src="../assets/img/sports-de-balles.png" alt=""></div>
-                    <div class="actus-article col-8">
+                    <div class="actus-img col-12 col-lg-4"><img src="'.$photo_url.'" alt=""></div>
+                    <div class="actus-article col-12 col-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
                     </div>
@@ -123,23 +127,23 @@ function displaynews($param) {
 
     foreach ($param as $flux) {
         if ($flux === 'actualites') { ?>
-            <h2 class="text-center bg-dark text-white rounded my-5" id="actualites">Actualités</h2>
+            <h2 class="actus-title text-center text-white bg-dark rounded my-5 w-50 mx-auto" id="actualites">Actualités</h2>
             <?php
             rss_reader('https://www.lemonde.fr/rss/une.xml');
         } elseif ($flux === 'culture') { ?>
-            <h2 class="text-center bg-dark text-white rounded my-5" id="actualites">Culture</h2>
+            <h2 class="culture-title text-center text-white bg-dark rounded my-5 w-50 mx-auto" id="actualites">Culture</h2>
             <?php
             rss_reader('https://www.lemonde.fr/culture/rss_full.xml');
         } elseif ($flux === 'pixels') { ?>
-            <h2 class="text-center bg-dark text-white rounded my-5" id="actualites">Pixels</h2>
+            <h2 class="pixels-title text-center text-white bg-dark rounded my-5 w-50 mx-auto" id="actualites">Pixels</h2>
             <?php
             rss_reader('https://www.lemonde.fr/pixels/rss_full.xml');
         } elseif ($flux === 'economie') { ?>
-            <h2 class="text-center bg-dark text-white rounded my-5" id="actualites">Economie</h2>
+            <h2 class="economie-title text-center text-white bg-dark rounded my-5 w-50 mx-auto" id="actualites">Economie</h2>
             <?php
             rss_reader('https://www.lemonde.fr/economie/rss_full.xml');
         } elseif ($flux === 'sport') { ?>
-            <h2 class="text-center bg-dark text-white rounded my-5" id="actualites">Sport</h2>
+            <h2 class="sport-title text-center text-white bg-dark rounded my-5 w-50 mx-auto" id="actualites">Sport</h2>
             <?php
             rss_reader('https://www.lemonde.fr/sport/rss_full.xml');
         } elseif(empty($param)) {

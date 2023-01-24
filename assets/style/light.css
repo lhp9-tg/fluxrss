@@ -41,10 +41,18 @@ nav img {
 }
 .actus-img {
     margin: auto;
+    padding: 0;
+}
+.actus-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .actus-img img {
-    height: 5em;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+   
 }
 
 .arrow {
