@@ -23,7 +23,7 @@
                         <a class="nav-link" href="../controllers/pages-controller.php?sport">Sport</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../controllers/parameters.controller.php"><img src="../assets/img/adjust.png" alt=""></a>
+                        <a class="nav-link" href="../controllers/parameters-controller.php"><img src="../assets/img/adjust.png" alt=""></a>
                     </li>
                     
                     

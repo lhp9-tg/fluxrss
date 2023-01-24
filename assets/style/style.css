@@ -13,8 +13,24 @@ nav img {
 }
 .actus{
     height: auto;
-    border-left: 5px solid blue;
+    border-left: 5px solid red;
    
+}
+.culture {
+    height: auto;
+    border-left: 5px solid green;
+}
+.sport {
+    height: auto;
+    border-left: 5px solid orange;
+}
+.pixels {
+    height: auto;
+    border-left: 5px solid blueviolet;
+}
+.economie {
+    height: auto;
+    border-left: 5px solid blue;
 }
 .actus-img {
     margin: auto;
@@ -24,7 +40,11 @@ nav img {
     object-fit: cover;
 }
 
-
+.arrow {
+    height: 2em;
+    width: 2em;
+    cursor: pointer;
+}
 
 
 .footer {

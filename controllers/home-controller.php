@@ -4,7 +4,8 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
     $rss = simplexml_load_file($rss_feed);
     
     foreach ($rss->channel->item as $item) {
-      
+        if ($rss->channel->link == 'https://www.lemonde.fr/rss/une.xml') {
+       
 
         echo '
         <div class="container mx-0">
@@ -19,7 +20,66 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
         </div>
         <hr>
         ';
+        } elseif ($rss->channel->link == 'https://www.lemonde.fr/culture/rss_full.xml') {
+            echo '
+            <div class="container mx-0">
+             <div class="row culture my-2 mx-0">
+    
+                <div class="actus-img col-4"><img src="../assets/img/news-paper.png" alt=""></div>
+                <div class="actus-article col-8">
+                   <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
+                    <p class="date text-center">' . $item->pubDate . '</p>
+                </div>
+             </div>
+            </div>
+            <hr>
+            ';
+        } elseif ($rss->channel->link == 'https://www.lemonde.fr/pixels/rss_full.xml') {
+            echo '
+            <div class="container mx-0">
+             <div class="row pixels my-2 mx-0">
+    
+                <div class="actus-img col-4"><img src="../assets/img/news-paper.png" alt=""></div>
+                <div class="actus-article col-8">
+                   <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
+                    <p class="date text-center">' . $item->pubDate . '</p>
+                </div>
+             </div>
+            </div>
+            <hr>
+            ';
+        } elseif ($rss->channel->link == 'https://www.lemonde.fr/economie/rss_full.xml') {
+            echo '
+            <div class="container mx-0">
+             <div class="row economie my-2 mx-0">
+    
+                <div class="actus-img col-4"><img src="../assets/img/news-paper.png" alt=""></div>
+                <div class="actus-article col-8">
+                   <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
+                    <p class="date text-center">' . $item->pubDate . '</p>
+                </div>
+             </div>
+            </div>
+            <hr>
+            ';
+        } elseif ($rss->channel->link == 'https://www.lemonde.fr/sport/rss_full.xml') {
+            echo '
+            <div class="container mx-0">
+             <div class="row sport my-2 mx-0">
+    
+                <div class="actus-img col-4"><img src="../assets/img/news-paper.png" alt=""></div>
+                <div class="actus-article col-8">
+                   <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
+                    <p class="date text-center">' . $item->pubDate . '</p>
+                </div>
+             </div>
+            </div>
+            <hr>
+            ';
+        }
+
     }
+   
 }
 ?>
 
@@ -28,4 +88,5 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
 <?php
 
 include('../views/home.php');
+
 ?>
