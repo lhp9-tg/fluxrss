@@ -1,24 +1,18 @@
 <?php
 
-if (isset($_POST['mode'])) {
-    
+if (isset($_COOKIE['user']['mode'])) {
+    $mode = $_COOKIE['user']['mode'];
 }
-elseif (isset($_COOKIE['user'])) {
-    
+else {
+    $mode = 'light';
 }
-
-$flux1 = 'https://www.lemonde.fr/rss/une.xml';
-$flux2 = 'https://www.lemonde.fr/economie/rss_full.xml';
-$flux3 = 'https://www.lemonde.fr/culture/rss_full.xml';
-$flux4 = 'https://www.lemonde.fr/sport/rss_full.xml';
-$flux5 = 'https://www.lemonde.fr/pixels/rss_full.xml';
-
 
 // Choix des flux
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    if (isset($_GET['input1'])) {
+    if (isset($_GET['flux'])) {
         $fluxchosen = [];
+
         if (isset($_GET['flux1'])) {
             $fluxchosen1 = $_GET['flux1'];
             array_push($fluxchosen, $fluxchosen1);

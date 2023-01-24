@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -8,25 +8,30 @@
     <link rel="icon" href="../assets/img/news-paper.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../assets/style/style.css">
+    <link rel="stylesheet" href="../assets/style/<?= $mode ?>.css">
     <title>Parametres</title>
 </head>
 
 <body>
+    <div class="container">
+        <div class="row my-3">
+            <a href="../controllers/home-controller.php" class="col-2"><img class="arrow my-3" src="../assets/img/arrow.png" alt=""></a>
+            <h1 class="text-center col-10 my-3">Paramètres</h1>
+        </div>
 
-<form method='GET' action=''>
+        <form method='GET' action=''>
 
             <fieldset>
                 <legend>Veuillez choisir 3 flux à suivre</legend>
 
 
-                <input type="checkbox" name="flux1" value="actualites" id="actualites" <?php if (isset($_COOKIE['user']['flux']) && str_contains($_COOKIE['user']['flux'], 'actualites')) echo 'checked' ?>><label for='actualites'> Actualités </label><br>
-                <input type="checkbox" name="flux2" value="economie" id="economie" <?php if (isset($_COOKIE['user']['flux']) && str_contains($_COOKIE['user']['flux'], 'economie')) echo 'checked' ?>><label for='economie'> Economie </label><br>
-                <input type="checkbox" name="flux3" value="culture" id="culture" <?php if (isset($_COOKIE['user']['flux']) && str_contains($_COOKIE['user']['flux'], 'culture')) echo 'checked' ?>><label for='culture'> Culture </label><br>
-                <input type="checkbox" name="flux4" value="sport" id="sport" <?php if (isset($_COOKIE['user']['flux']) && str_contains($_COOKIE['user']['flux'], 'sport')) echo 'checked' ?>><label for='sport'> Sport </label><br>
-                <input type="checkbox" name="flux5" value="pixels" id="pixels" <?php if (isset($_COOKIE['user']['flux']) && str_contains($_COOKIE['user']['flux'], 'pixels')) echo 'checked' ?>><label for='pixels'> Pixels </label><br>
+                <input type="checkbox" name="flux1" value="actualites" id="actualites" <?php if (isset($_GET['flux']) && str_contains($_GET['flux'], 'actualites')) echo 'checked' ?>><label for='actualites'> Actualités </label><br>
+                <input type="checkbox" name="flux2" value="economie" id="economie" <?php if (isset($_GET['flux']) && str_contains($_GET['flux'], 'economie')) echo 'checked' ?>><label for='economie'> Economie </label><br>
+                <input type="checkbox" name="flux3" value="culture" id="culture" <?php if (isset($_GET['flux']) && str_contains($_GET['flux'], 'culture')) echo 'checked' ?>><label for='culture'> Culture </label><br>
+                <input type="checkbox" name="flux4" value="sport" id="sport" <?php if (isset($_GET['flux']) && str_contains($_GET['flux'], 'sport')) echo 'checked' ?>><label for='sport'> Sport </label><br>
+                <input type="checkbox" name="flux5" value="pixels" id="pixels" <?php if (isset($_GET['flux']) && str_contains($_GET['flux'], 'pixels')) echo 'checked' ?>><label for='pixels'> Pixels </label><br>
 
-                <input class="mt-2" type="submit" name='input1' value="Choisir">
+                <input class="mt-2" type="submit" value="Choisir">
             </fieldset>
         </form>
 
