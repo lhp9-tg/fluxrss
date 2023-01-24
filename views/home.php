@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     <link rel="icon" href="../assets/img/news-paper.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../assets/style/style.css">
+    <link rel="stylesheet" href="../assets/style/<?= $mode ?>.css">
     <title>Lecteur de flux RSS</title>
 </head>
 
@@ -37,21 +37,17 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-<?php include('../views/includes/navbar.php')?>
+<?php include('../views/includes/navbar.php');
 
+if (isset($_GET['flux'])) {
+    displaynews($_GET['flux']);
+}
+else {
+    $fluxdefault = ['actualites', 'culture', 'pixels'];
+    displaynews($fluxdefault);
+}
 
-    <h2 class="text-center bg-dark text-white rounded my-5" id="actualites">Actualités</h2>
-    <?php rss_reader('https://www.lemonde.fr/rss/une.xml'); ?>
-    <h2 class="text-center bg-dark text-white rounded my-5"id="economie">Economie</h2>
-    <?php rss_reader('https://www.lemonde.fr/economie/rss_full.xml'); ?>
-    <h2 class="text-center bg-dark text-white rounded my-5" id="culture">Culture</h2>
-    <?php rss_reader('https://www.lemonde.fr/culture/rss_full.xml'); ?>
-    <h2 class="text-center bg-dark text-white rounded my-5" id="pixels">Pixels</h2>
-    <?php rss_reader('https://www.lemonde.fr/pixels/rss_full.xml'); ?>
-    <h2 class="text-center bg-dark text-white rounded my-5" id="sport">Sport</h2>
-    <?php rss_reader('https://www.lemonde.fr/sport/rss_full.xml'); ?>
-
-    <footer>
+?>
 
 <div class="row">
     <div class="col-12">

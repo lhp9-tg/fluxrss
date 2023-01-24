@@ -1,6 +1,6 @@
 <h1>Paramètres</h1>
 
-<form method='POST' action=''>
+<form method='GET' action=''>
 
     <fieldset>
         <legend>Veuillez choisir 3 flux à suivre</legend>

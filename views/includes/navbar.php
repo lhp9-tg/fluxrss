@@ -7,26 +7,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../controllers/pages-controller.php?actualites">Actualités</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../controllers/pages-controller.php?culture">Culture</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../controllers/pages-controller.php?pixels">Pixels</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../controllers/pages-controller.php?economie">Economie</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../controllers/pages-controller.php?sport">Sport</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../controllers/parameters.controller.php"><img src="../assets/img/adjust.png" alt=""></a>
-                    </li>
-                    
-                    
+                    <?php
+                    if (isset($_GET['flux'])) {
+                        navbarlist($_GET['flux']);
+                    }
+                    else {
+                        $fluxdefault = ['actualites', 'culture', 'pixels'];
+                        navbarlist($fluxdefault);
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
