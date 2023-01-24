@@ -1,15 +1,14 @@
 <?php
 
-$numbers = [6,9,12];
-$numberstring = ['six','nine','twelve'];
-
-$_COOKIE['user']['article'] = str_replace($numberstring, $numbers, $_COOKIE['user']['article']);
 
 
 function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux RSS et l'image de la console
 {
 
     if (isset($_COOKIE['user']['article'])) {
+        $numbers = [6,9,12];
+        $numberstring = ['six','nine','twelve'];
+        $_COOKIE['user']['article'] = str_replace($numberstring, $numbers, $_COOKIE['user']['article']);
         $maxarticle = $_COOKIE['user']['article'];
     }
     else {

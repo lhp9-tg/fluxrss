@@ -37,10 +37,12 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-<?php include('../views/includes/navbar.php');
+<?php 
 
-if (isset($_GET['flux'])) {
-    displaynews($_GET['flux']);
+include('../views/includes/navbar.php');
+
+if (isset($_COOKIE['user']['flux'])) {
+    displaynews(unserialize($_COOKIE['user']['flux']));
 }
 else {
     $fluxdefault = ['actualites', 'culture', 'pixels'];
