@@ -31,7 +31,7 @@
                 <input type="checkbox" name="flux4" value="sport" id="sport" <?php if (isset($_GET['flux']) && str_contains($_GET['flux'], 'sport')) echo 'checked' ?>><label for='sport'> Sport </label><br>
                 <input type="checkbox" name="flux5" value="pixels" id="pixels" <?php if (isset($_GET['flux']) && str_contains($_GET['flux'], 'pixels')) echo 'checked' ?>><label for='pixels'> Pixels </label><br>
 
-                <input class="mt-2" type="submit" value="Choisir">
+                <input class="mt-2 rounded-5" type="submit" value="Choisir">
             </fieldset>
         </form>
 
@@ -43,7 +43,7 @@
                 <input type="radio" name="mode" value="light" id="light" <?php if (isset($_COOKIE['user']) && ($_COOKIE['user']['mode'] === 'light'))  echo 'checked' ?>><label for="light"> Affichage clair </label><br>
                 <input type="radio" name="mode" value="dark" id="dark" <?php if (isset($_COOKIE['user']) && ($_COOKIE['user']['mode'] === 'dark'))  echo 'checked' ?>><label for="dark"> Affichage sombre </label><br>
 
-                <input class="mt-2" type="submit" name='input2' value="Choisir">
+                <input class="mt-2 rounded-5" type="submit" name='input2' value="Choisir">
             </fieldset>
         </form>
 
@@ -56,7 +56,7 @@
                 <input type="radio" name="article" value="nine" id="nine" <?php if (isset($_COOKIE['article']) && ($_COOKIE['user']['article'] === 'nine')) echo 'checked' ?>><label for="nine"> 9 articles / pages </label><br>
                 <input type="radio" name="article" value="twelve" id="twelve" <?php if (isset($_COOKIE['article']) && ($_COOKIE['user']['article'] === 'twelve')) echo 'checked' ?>><label for="twelve"> 12 articles / pages </label><br>
 
-                <input class="mt-2" type="submit" name='input3' value="Choisir">
+                <input class="mt-2 rounded-5" type="submit" name='input3' value="Choisir">
             </fieldset>
         </form>
     </div>

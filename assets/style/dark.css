@@ -85,12 +85,11 @@ border: 2px solid red;
     filter: brightness(0.7);
 }
 
-.footer {
+footer {
     height: 2em;
     background-color: #333;
     color: #f5f5f5;
     text-align: center;
-    padding-top: 2em;
 }
 
 .date {
