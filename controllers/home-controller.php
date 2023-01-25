@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_COOKIE['user']['mode'])) {
     $mode = $_COOKIE['user']['mode'];
 }

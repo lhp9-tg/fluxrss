@@ -8,8 +8,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <?php
-                    if (isset($_GET['flux'])) {
-                        navbarlist($_GET['flux']);
+                    if (isset($_COOKIE['user']['flux'])) {
+                        navbarlist(unserialize($_COOKIE['user']['flux']));
                     }
                     else {
                         $fluxdefault = ['actualites', 'culture', 'pixels'];

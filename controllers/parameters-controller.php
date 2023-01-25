@@ -9,28 +9,27 @@ else {
 
 // Choix des flux
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    if (isset($_GET['flux'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['input1'])) {
         $fluxchosen = [];
-
-        if (isset($_GET['flux1'])) {
-            $fluxchosen1 = $_GET['flux1'];
+        if (isset($_POST['flux1'])) {
+            $fluxchosen1 = $_POST['flux1'];
             array_push($fluxchosen, $fluxchosen1);
         }
-        if (isset($_GET['flux2'])) {
-            $fluxchosen2 = $_GET['flux2'];
+        if (isset($_POST['flux2'])) {
+            $fluxchosen2 = $_POST['flux2'];
             array_push($fluxchosen, $fluxchosen2);
         }
-        if (isset($_GET['flux3'])) {
-            $fluxchosen3 = $_GET['flux3'];
+        if (isset($_POST['flux3'])) {
+            $fluxchosen3 = $_POST['flux3'];
             array_push($fluxchosen, $fluxchosen3);
         }
-        if (isset($_GET['flux4'])) {
-            $fluxchosen4 = $_GET['flux4'];
+        if (isset($_POST['flux4'])) {
+            $fluxchosen4 = $_POST['flux4'];
             array_push($fluxchosen, $fluxchosen4);
         }
-        if (isset($_GET['flux5'])) {
-            $fluxchosen5 = $_GET['flux5'];
+        if (isset($_POST['flux5'])) {
+            $fluxchosen5 = $_POST['flux5'];
             array_push($fluxchosen, $fluxchosen5);
         }
 
@@ -44,6 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo 'Vous n\'avez pas choisi assez de flux. Vous devez choisir 3 flux';
         }
         else {
+            setcookie('user[flux]', serialize($fluxchosen), time() + 24*3600);
+            header ('Location: ../controllers/parameters-controller.php');
             echo 'Vous avez choisi les flux suivants : <br>';
             foreach ($fluxchosen as $flux) {
                 echo $flux . ' <br>';
