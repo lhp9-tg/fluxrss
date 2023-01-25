@@ -34,18 +34,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if (count($fluxchosen) === 0) {
-            echo 'Aucun flux choisit. Vous devez choisir 3 flux';
+            $message = 'Aucun flux choisit. Vous devez choisir 3 flux';
         }
         elseif (count($fluxchosen) > 3) {
-            echo 'Vous avez choisi trop de flux. Vous devez choisir 3 flux';
+            $message = 'Vous avez choisi trop de flux. Vous devez choisir 3 flux';
         }
         elseif (count($fluxchosen) < 3) {
-            echo 'Vous n\'avez pas choisi assez de flux. Vous devez choisir 3 flux';
+            $message = 'Vous n\'avez pas choisi assez de flux. Vous devez choisir 3 flux';
         }
         else {
             setcookie('user[flux]', serialize($fluxchosen), time() + 24*3600);
             header ('Location: ../controllers/parameters-controller.php');
-            echo 'Vous avez choisi les flux suivants : <br>';
+            $message = 'Vous avez choisi les flux suivants : <br>';
             foreach ($fluxchosen as $flux) {
                 echo $flux . ' <br>';
             }
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['input2'])) {
         if (!isset($_POST['mode'])) {
-            echo 'Vous devez choisir un mode d\'affichage';
+            $message =  'Vous devez choisir un mode d\'affichage';
         }
         else {
             $mode = $_POST['mode'];
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['input3'])) {
         if (!isset($_POST['article'])) {
-            echo 'Vous devez choisir un nombre d\'articles';
+            $message = 'Vous devez choisir un nombre d\'articles';
         }
         else {
             $article = $_POST['article'];

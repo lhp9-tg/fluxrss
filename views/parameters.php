@@ -15,11 +15,9 @@
 <body>
     <div class="container">
         <div class="row my-3">
-            <a href="../controllers/home-controller.php" class="col-2"><img class="arrow my-3" src="../assets/img/arrow.png" alt=""></a>
+            <a href="../accueil" class="col-2"><img class="arrow my-3" src="../assets/img/arrow.png" alt=""></a>
             <h1 class="text-center col-10 my-3">Paramètres</h1>
         </div>
-
-        
 
         <form method='POST' action=''>
 
@@ -32,7 +30,7 @@
                 <input type="checkbox" name="flux4" value="sport" id="sport" <?php if (isset($_COOKIE['user']['flux']) && str_contains($_COOKIE['user']['flux'], 'sport')) echo 'checked' ?>><label for='sport'> Sport </label><br>
                 <input type="checkbox" name="flux5" value="pixels" id="pixels" <?php if (isset($_COOKIE['user']['flux']) && str_contains($_COOKIE['user']['flux'], 'pixels')) echo 'checked' ?>><label for='pixels'> Pixels </label><br>
 
-                <input class="mt-2 rounded-5" type="submit" value="Choisir">
+                <input class="mt-2 rounded-5" type="submit" name='input1' value="Choisir">
             </fieldset>
         </form>
 
