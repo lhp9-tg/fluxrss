@@ -3,7 +3,7 @@ body {
 
 }
 .carousel img {
-    height: 10em;
+    height: auto;
     width: 100%;
     object-fit: cover;
 }
@@ -119,4 +119,17 @@ footer {
 }
 .title:hover {
     text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+    .carousel img {
+        height: auto;
+        margin: auto;
+        display: block;
+    }
+    .carousel {
+       width: 50%;
+       margin: auto;  
+       background-color: #000;
+      }
 }

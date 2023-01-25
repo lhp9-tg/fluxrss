@@ -37,7 +37,7 @@ function navbarlist($param)
     <?php
 }
 
-function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux RSS et l'image de la console
+function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux RSS et qui affiche les articles
 {
 
     if (isset($_COOKIE['user']['article'])) {
@@ -387,8 +387,8 @@ function displayhome($param)
             <div class="container mx-auto">
             <div class="row my-2 mx-0" style="color: #f5f5f5; background-color: ' . $background . ' ; height: auto; border-left : solid 5px ' . $categorycolor . ';">
 
-                <div class="actus-img col-4"><img src="' . $photo_url . '" alt=""></div>
-                <div class="actus-article col-lg-8">
+                <div class="actus-img col-12 col-lg-4"><img class="imgArticle" src="' . $photo_url . '" alt=""></div>
+                <div class="actus-article col-12 col-lg-8">
                 <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $newDate . '</p>
                     <button type="button" class=" btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">

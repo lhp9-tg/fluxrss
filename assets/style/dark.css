@@ -150,3 +150,15 @@ footer {
     text-decoration: underline;
     color: #f5f5f5;
 }
+@media (min-width: 1024px) {
+    .carousel img {
+        height: auto;
+        margin: auto;
+        display: block;
+    }
+    .carousel {
+       width: 50%;
+       margin: auto;  
+       background-color: #000;
+      }
+}
