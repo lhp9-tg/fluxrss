@@ -70,7 +70,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                 <div class="actus-article col-12 col-lg-8 mt-3">
                 <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $newDate . '</p>
-                    <button type="button" class="btn-actualites btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn-actualites btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#modal'.$i.'">
                     Voir plus
                     </button>
             </div>
@@ -80,19 +80,19 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
 
 
         <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal'.$i.'" tabindex="-1" aria-labelledby="modal'.$i.'Label" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
 
-<div class="modal-title fs-5" id="exampleModalLabel"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
+<div class="modal-title fs-5" id="modal'.$i.'Label"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
 
 </div>
 <div class="modal-body text-black">
 ' . $item->description . '
 </div>
 <div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+<button type="button" class="btn btn-actualites" data-bs-dismiss="modal"><a class="modalink-actualites" href="' . $item->link . '" target="_blank">Voir article</a></button>
 
 </div>
 </div>
@@ -112,7 +112,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                        <button type="button" class="btn-culture btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn-culture btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#modal'.$i.'">
                             Voir plus
                             </button>
                     </div>
@@ -122,19 +122,19 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
 
 
                 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal'.$i.'" tabindex="-1" aria-labelledby="modal'.$i.'Label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
     
-        <div class="modal-title fs-5" id="exampleModalLabel"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
+        <div class="modal-title fs-5" id="modal'.$i.'Label"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
        
       </div>
       <div class="modal-body text-black">
         ' . $item->description . '
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+        <button type="button" class="btn btn-culture" data-bs-dismiss="modal"><a class="modalink-culture" href="' . $item->link . '" target="_blank">Voir article</a></button>
 
       </div>
     </div>
@@ -154,7 +154,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                        <button type="button" class=" btn-pixels btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class=" btn-pixels btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#modal'.$i.'">
                         Voir plus
                         </button>
                 </div>
@@ -164,19 +164,19 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
 
 
             <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal'.$i.'" tabindex="-1" aria-labelledby="modal'.$i.'Label" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
   <div class="modal-header">
 
-    <div class="modal-title fs-5" id="exampleModalLabel"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
+    <div class="modal-title fs-5" id="modal'.$i.'Label"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
    
   </div>
   <div class="modal-body text-black">
     ' . $item->description . '
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+    <button type="button" class="btn btn-pixels" data-bs-dismiss="modal"><a class="modalink-pixels" href="' . $item->link . '" target="_blank">Voir article</a></button>
 
   </div>
 </div>
@@ -196,7 +196,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                        <button type="button" class="btn-economie btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn-economie btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#modal'.$i.'">
                         Voir plus
                         </button>
                 </div>
@@ -206,19 +206,19 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
 
 
             <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal'.$i.'" tabindex="-1" aria-labelledby="modal'.$i.'Label" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
   <div class="modal-header">
 
-    <div class="modal-title fs-5" id="exampleModalLabel"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
+    <div class="modal-title fs-5" id="modal'.$i.'Label"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
    
   </div>
   <div class="modal-body text-black">
     ' . $item->description . '
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+    <button type="button" class="btn btn-economie" data-bs-dismiss="modal"><a class="modalink-economie" href="' . $item->link . '" target="_blank">Voir article</a></button>
 
   </div>
 </div>
@@ -239,7 +239,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                        <button type="button" class="btn-sport btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn-sport btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#modal'.$i.'">
                         Voir plus
                         </button>
                 </div>
@@ -249,19 +249,19 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
 
 
             <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal'.$i.'" tabindex="-1" aria-labelledby="modal'.$i.'Label" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
   <div class="modal-header">
 
-    <div class="modal-title fs-5" id="exampleModalLabel"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
+    <div class="modal-title fs-5" id="modal'.$i.'Label"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
    
   </div>
   <div class="modal-body text-black">
     ' . $item->description . '
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+    <button type="button" class="btn btn-sport" data-bs-dismiss="modal"><a class="modalink-sport" href="' . $item->link . '" target="_blank">Voir article</a></button>
 
   </div>
 </div>
@@ -404,7 +404,7 @@ function displayhome($param)
                 <div class="actus-article col-12 col-lg-8">
                 <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $newDate . '</p>
-                    <button type="button" class="btn-'.$category.' btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn-'.$category.' btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#modal'.$i.'">
                     Voir plus
                     </button>
             </div>
@@ -414,19 +414,19 @@ function displayhome($param)
 
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="modal'.$i.'" tabindex="-1" aria-labelledby="#modal'.$i.'Label" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
 
-            <div class="modal-title fs-5" id="exampleModalLabel"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
+            <div class="modal-title fs-5" id="#modal'.$i.'Label"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
 
             </div>
             <div class="modal-body text-black">
             ' . $item->description . '
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+            <button type="button" class="btn btn-'.$category.' " data-bs-dismiss="modal"><a class="modalink-'.$category.'" href="' . $item->link . '" target="_blank">Voir article</a></button>
 
             </div>
             </div>
