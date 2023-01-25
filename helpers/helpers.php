@@ -6,27 +6,27 @@ function navbarlist($param)
     foreach ($param as $flux) {
         if ($flux === 'actualites') { ?>
             <li class="nav-item ">
-                <a class="nav-link <?php if ($_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" aria-current="page" href="../actualites">Actualités</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" aria-current="page" href="../actualites">Actualités</a>
             </li>
         <?php
         } elseif ($flux === 'culture') { ?>
             <li class="nav-item">
-                <a class="nav-link <?php if ($_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../culture">Culture</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../culture">Culture</a>
             </li>
         <?php
         } elseif ($flux === 'pixels') { ?>
             <li class="nav-item">
-                <a class="nav-link <?php if ($_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../pixels">Pixels</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../pixels">Pixels</a>
             </li>
         <?php
         } elseif ($flux === 'economie') { ?>
             <li class="nav-item">
-                <a class="nav-link <?php if ($_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../economie">Economie</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../economie">Economie</a>
             </li>
         <?php
         } elseif ($flux === 'sport') { ?>
             <li class="nav-item">
-                <a class="nav-link <?php if ($_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../sport">Sport</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../sport">Sport</a>
             </li>
     <?php
         }
