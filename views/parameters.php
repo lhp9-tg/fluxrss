@@ -15,8 +15,8 @@
 <body>
     <div class="container">
         <div class="row my-3">
-            <a href="../accueil" class="col-2"><img class="arrow my-3" src="../assets/img/arrow.png" alt=""></a>
-            <h1 class="text-center col-10 my-3">Paramètres</h1>
+            <a href="../accueil" class="col-12"><img class="arrow my-3" src="../assets/img/arrow.png" alt=""></a>
+            <h1 class="text-center col-12 my-3">Paramètres</h1>
         </div>
 
         
