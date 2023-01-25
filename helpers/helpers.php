@@ -89,7 +89,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
 
 </div>
 <div class="modal-body text-black">
-'.$item->description.'
+' . $item->description . '
 </div>
 <div class="modal-footer">
 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
@@ -131,7 +131,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
        
       </div>
       <div class="modal-body text-black">
-        '.$item->description.'
+        ' . $item->description . '
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
@@ -173,7 +173,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
    
   </div>
   <div class="modal-body text-black">
-    '.$item->description.'
+    ' . $item->description . '
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
@@ -215,7 +215,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
    
   </div>
   <div class="modal-body text-black">
-    '.$item->description.'
+    ' . $item->description . '
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
@@ -258,7 +258,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
    
   </div>
   <div class="modal-body text-black">
-    '.$item->description.'
+    ' . $item->description . '
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
@@ -358,29 +358,67 @@ function displayhome($param)
 
     foreach ($homeflux as $item) {
         if ($i <= $maxarticle) {
-            $i++;
 
             $originalDate = $item->pubDate;
             $newDate = date('d/m/Y H:i', strtotime($originalDate));
-
-            array_push($testdate, $newDate);
+            preg_match('/media:content url="(.*)" width/', $item->asXML(), $matches);
+            $photo_url = $matches[1];
 
             if (in_array($newDate, $testdate)) {
                 continue;
             }
 
+            array_push($testdate, $newDate);
+            $i++;
+
+            $searchcategory = explode('/', $item->link);
+            $category = $searchcategory[3];
+            $categorycolorarray = ['actualites' => 'red', 'culture' => 'green', 'pixels' => 'purple', 'economie' => 'blue', 'sport' => 'orange', 'politique' => 'yellow', 'societe' => 'pink', 'idees' => 'brown', 'international' => 'grey', 'sciences' => 'black', 'technologies' => 'white'];
+            $categorycolor = $categorycolorarray[$category];
+
+            if ($_COOKIE['user']['mode'] === 'light') {
+                $background = '#f5f5f5';
+            }
+            else {
+                $background = '#444';
+            }
+
             echo '
             <div class="container mx-auto">
-            <div class="row actus my-2 mx-0">
+            <div class="row my-2 mx-0" style="color: #f5f5f5; background-color: ' . $background . ' ; height: auto; border-left : solid 5px ' . $categorycolor . ';">
 
-                <div class="actus-img col-4"><img src="../assets/img/news-paper.png" alt=""></div>
-                <div class="actus-article col-8">
+                <div class="actus-img col-4"><img src="' . $photo_url . '" alt=""></div>
+                <div class="actus-article col-lg-8">
                 <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $newDate . '</p>
-                </div>
+                    <button type="button" class=" btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Voir plus
+                    </button>
+            </div>
             </div>
             </div>
             <hr>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+
+            <div class="modal-title fs-5" id="exampleModalLabel"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
+
+            </div>
+            <div class="modal-body text-black">
+            ' . $item->description . '
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+
+            </div>
+            </div>
+            </div>
+            </div>
             ';
         }
     }
