@@ -19,7 +19,7 @@
             <h1 class="text-center col-10 my-3">Paramètres</h1>
         </div>
 
-        <h1>Paramètres</h1>
+        
 
         <form method='POST' action=''>
 
