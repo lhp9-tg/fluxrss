@@ -41,10 +41,18 @@ nav img {
 }
 .actus-img {
     margin: auto;
+    padding: 0;
+}
+.actus-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .actus-img img {
-    height: 5em;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+   
 }
 
 .arrow {
@@ -54,12 +62,11 @@ nav img {
 }
 
 
-.footer {
+footer {
     height: 2em;
     background-color: #f5f5f5;
     color: #000;
     text-align: center;
-    padding-top: 2em;
 }
 .date {
     font-size: 0.8em;
