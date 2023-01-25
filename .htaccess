@@ -7,3 +7,5 @@ RewriteRule  "culture" "controllers/pages-controller.php?culture"
 RewriteRule  "sport" "controllers/pages-controller.php?sport"
 RewriteRule  "pixels" "controllers/pages-controller.php?pixels"
 RewriteRule  "parametres" "controllers/parameters-controller.php"
+RewriteRule  "parametres" "controllers/parameters-controller.php"
+ErrorDocument 404 /404.php

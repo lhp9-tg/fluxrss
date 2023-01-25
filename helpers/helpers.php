@@ -373,7 +373,7 @@ function displayhome($param)
 
             $searchcategory = explode('/', $item->link);
             $category = $searchcategory[3];
-            $categorycolorarray = ['actualites' => '#FF0000', 'culture' => '#00FF00', 'pixels' => 'blueviolet', 'economie' => '#0000FF', 'sport' => 'orange'];
+            $categorycolorarray = ['actualites' => '#FF0000', 'culture' => 'green', 'pixels' => 'blueviolet', 'economie' => '#0000FF', 'sport' => 'orange'];
 
             //Vérifie si la catégorie est dans le tableau
             if (array_key_exists($category, $categorycolorarray)) {
