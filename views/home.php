@@ -42,11 +42,11 @@
 include('../views/includes/navbar.php');
 
 if (isset($_COOKIE['user']['flux'])) {
-    displaynews(unserialize($_COOKIE['user']['flux']));
+    displayhome(unserialize($_COOKIE['user']['flux']));
 }
 else {
     $fluxdefault = ['actualites', 'culture', 'pixels'];
-    displaynews($fluxdefault);
+    displayhome($fluxdefault);
 }
 
 ?>
