@@ -242,6 +242,9 @@ function displayhome($param)
             
             $originalDate = $item->pubDate;
             $newDate = date('d/m/Y H:i', strtotime($originalDate));
+
+            preg_match('/media:content url="(.*)" width/', $item->asXML(), $matches);
+            $photo_url = $matches[1];
             
             if (in_array($newDate, $testdate)) {
                 continue;
@@ -250,11 +253,16 @@ function displayhome($param)
             array_push($testdate, $newDate);
             $i++;
 
+            $searchcategory = explode('/', $item->link);
+            $category = $searchcategory[3];
+            $categorycolorarray = ['actualites' => 'red', 'culture' => 'green', 'pixels' => 'purple', 'economie' => 'blue', 'sport' => 'orange', 'politique' => 'yellow', 'societe' => 'pink', 'idees' => 'brown', 'planete' => 'grey', 'sciences' => 'black', 'technologies' => 'white'];
+            $categorycolor = $categorycolorarray[$category];
+
             echo '
             <div class="container mx-auto">
-            <div class="row actus my-2 mx-0">
+            <div class="row my-2 mx-0" style="color: #f5f5f5; background-color: #444; height: auto; border-left : solid 5px '.$categorycolor.';">
 
-                <div class="actus-img col-4"><img src="../assets/img/news-paper.png" alt=""></div>
+                <div class="actus-img col-4"><img src="'.$photo_url.'" alt=""></div>
                 <div class="actus-article col-lg-8">
                 <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $newDate . '</p>
