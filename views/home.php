@@ -19,13 +19,13 @@
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../assets/img/newspaper-g7efb334a0_640.jpg" class="d-block w-100" alt="...">
+                <img class="imgCarousel1" src="../assets/img/newspaper-g7efb334a0_640.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="../assets/img/businessman-g04317133a_640.jpg" class="d-block w-100" alt="...">
+                <img class="imgCarousel2" src="../assets/img/businessman-g04317133a_640.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="../assets/img/scroll-g51098b7fc_640.jpg" class="d-block w-100" alt="...">
+                <img class="imgCarousel3" src="../assets/img/scroll-g51098b7fc_640.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -55,7 +55,7 @@ else {
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="/assets/script/script.js"></script>
 </body>
 
 </html>
