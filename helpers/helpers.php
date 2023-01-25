@@ -66,16 +66,39 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
             <div class="container mx-auto">
             <div class="row actus my-2 mx-0">
 
-                <div class="actus-img col-12 col-lg-4"><img src="'.$photo_url.'" alt=""></div>
+                <div class="actus-img col-12 col-lg-4"><img src="' . $photo_url . '" alt=""></div>
                 <div class="actus-article col-12 col-lg-8 mt-3">
                 <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $newDate . '</p>
-            
-                </div>
+                    <button type="button" class=" btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Voir plus
+                    </button>
             </div>
-            </div>
-            <hr>
-            ';
+        </div>
+        </div>
+        <hr>
+
+
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+
+<div class="modal-title fs-5" id="exampleModalLabel"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
+
+</div>
+<div class="modal-body text-black">
+'.$item->description.'
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+
+</div>
+</div>
+</div>
+</div>
+        ';
             } elseif ($rss->channel->link == 'https://www.lemonde.fr/culture/rss_full.xml') {
                 preg_match('/media:content url="(.*)" width/', $item->asXML(), $matches);
                 $photo_url = $matches[1];
@@ -85,14 +108,38 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                 <div class="container mx-auto">
                 <div class="row culture my-2 mx-0">
 
-                    <div class="actus-img col-12 col-lg-4"><img src="'.$photo_url.'" alt=""></div>
+                    <div class="actus-img col-12 col-lg-4"><img src="' . $photo_url . '" alt=""></div>
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
+                        <button type="button" class=" btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Voir plus
+                            </button>
                     </div>
                 </div>
                 </div>
                 <hr>
+
+
+                <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+    
+        <div class="modal-title fs-5" id="exampleModalLabel"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
+       
+      </div>
+      <div class="modal-body text-black">
+        '.$item->description.'
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+
+      </div>
+    </div>
+  </div>
+</div>
                 ';
             } elseif ($rss->channel->link == 'https://www.lemonde.fr/pixels/rss_full.xml') {
                 preg_match('/media:content url="(.*)" width/', $item->asXML(), $matches);
@@ -103,15 +150,39 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                 <div class="container mx-auto">
                 <div class="row pixels my-2 mx-0">
 
-                    <div class="actus-img col-12 col-lg-4"><img src="'.$photo_url.'" alt=""></div>
+                    <div class="actus-img col-12 col-lg-4"><img src="' . $photo_url . '" alt=""></div>
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                    </div>
+                        <button type="button" class="btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Voir plus
+                        </button>
                 </div>
-                </div>
-                <hr>
-                ';
+            </div>
+            </div>
+            <hr>
+
+
+            <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+
+    <div class="modal-title fs-5" id="exampleModalLabel"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
+   
+  </div>
+  <div class="modal-body text-black">
+    '.$item->description.'
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+
+  </div>
+</div>
+</div>
+</div>
+            ';
             } elseif ($rss->channel->link == 'https://www.lemonde.fr/economie/rss_full.xml') {
                 preg_match('/media:content url="(.*)" width/', $item->asXML(), $matches);
                 $photo_url = $matches[1];
@@ -121,15 +192,39 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                 <div class="container mx-auto">
                 <div class="row economie my-2 mx-0">
 
-                    <div class="actus-img col-12 col-lg-4"><img src="'.$photo_url.'" alt=""></div>
+                    <div class="actus-img col-12 col-lg-4"><img src="' . $photo_url . '" alt=""></div>
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                    </div>
+                        <button type="button" class="btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Voir plus
+                        </button>
                 </div>
-                </div>
-                <hr>
-                ';
+            </div>
+            </div>
+            <hr>
+
+
+            <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+
+    <div class="modal-title fs-5" id="exampleModalLabel"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
+   
+  </div>
+  <div class="modal-body text-black">
+    '.$item->description.'
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+
+  </div>
+</div>
+</div>
+</div>
+            ';
             } elseif ($rss->channel->link == 'https://www.lemonde.fr/sport/rss_full.xml') {
                 preg_match('/media:content url="(.*)" width/', $item->asXML(), $matches);
                 $photo_url = $matches[1];
@@ -140,15 +235,39 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                 <div class="container mx-auto">
                 <div class="row sport my-2 mx-0">
 
-                    <div class="actus-img col-12 col-lg-4"><img src="'.$photo_url.'" alt=""></div>
+                    <div class="actus-img col-12 col-lg-4"><img src="' . $photo_url . '" alt=""></div>
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                    </div>
+                        <button type="button" class="btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Voir plus
+                        </button>
                 </div>
-                </div>
-                <hr>
-                ';
+            </div>
+            </div>
+            <hr>
+
+
+            <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+
+    <div class="modal-title fs-5" id="exampleModalLabel"><img class="w-100 cover" src="' . $photo_url . '" alt=""></div>
+   
+  </div>
+  <div class="modal-body text-black">
+    '.$item->description.'
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+
+  </div>
+</div>
+</div>
+</div>
+            ';
             } else {
                 break;
             }
@@ -162,23 +281,23 @@ function displaycategory($param)
     foreach ($param as $flux) {
         if ($flux === 'actualites') { ?>
             <h2 class="actus-title text-center text-white bg-dark rounded my-5 w-50 mx-auto" id="actualites">Actualités</h2>
-            <?php
+        <?php
             rss_reader('https://www.lemonde.fr/rss/une.xml');
         } elseif ($flux === 'culture') { ?>
             <h2 class="culture-title text-center text-white bg-dark rounded my-5 w-50 mx-auto" id="actualites">Culture</h2>
-            <?php
+        <?php
             rss_reader('https://www.lemonde.fr/culture/rss_full.xml');
         } elseif ($flux === 'pixels') { ?>
             <h2 class="pixels-title text-center text-white bg-dark rounded my-5 w-50 mx-auto" id="actualites">Pixels</h2>
-            <?php
+        <?php
             rss_reader('https://www.lemonde.fr/pixels/rss_full.xml');
         } elseif ($flux === 'economie') { ?>
             <h2 class="economie-title text-center text-white bg-dark rounded my-5 w-50 mx-auto" id="actualites">Economie</h2>
-            <?php
+        <?php
             rss_reader('https://www.lemonde.fr/economie/rss_full.xml');
         } elseif ($flux === 'sport') { ?>
             <h2 class="sport-title text-center text-white bg-dark rounded my-5 w-50 mx-auto" id="actualites">Sport</h2>
-            <?php
+<?php
             rss_reader('https://www.lemonde.fr/sport/rss_full.xml');
         } elseif (empty($param)) {
             echo 'Aucun flux RSS sélectionné';
@@ -243,7 +362,7 @@ function displayhome($param)
 
             $originalDate = $item->pubDate;
             $newDate = date('d/m/Y H:i', strtotime($originalDate));
-            
+
             array_push($testdate, $newDate);
 
             if (in_array($newDate, $testdate)) {
@@ -263,7 +382,6 @@ function displayhome($param)
             </div>
             <hr>
             ';
-            
         }
     }
 }

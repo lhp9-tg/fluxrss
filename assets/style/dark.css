@@ -71,6 +71,10 @@ border: 2px solid red;
     height: auto;
     filter: brightness(0.7);
 }
+.actus-img {
+    margin: auto;
+    padding: 0;
+}
 .actus-article {
     display: flex;
     flex-direction: column;
