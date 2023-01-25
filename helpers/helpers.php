@@ -70,7 +70,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                 <div class="actus-article col-12 col-lg-8 mt-3">
                 <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $newDate . '</p>
-                    <button type="button" class=" btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn-actus btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Voir plus
                     </button>
             </div>
@@ -112,7 +112,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                        <button type="button" class=" btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn-culture btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Voir plus
                             </button>
                     </div>
@@ -154,7 +154,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                        <button type="button" class="btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class=" btn-pixels btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Voir plus
                         </button>
                 </div>
@@ -196,7 +196,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                        <button type="button" class="btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn-economie btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Voir plus
                         </button>
                 </div>
@@ -239,7 +239,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                        <button type="button" class="btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn-sport btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Voir plus
                         </button>
                 </div>
