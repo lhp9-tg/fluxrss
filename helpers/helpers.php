@@ -6,33 +6,34 @@ function navbarlist($param)
     foreach ($param as $flux) {
         if ($flux === 'actualites') { ?>
             <li class="nav-item ">
-                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" aria-current="page" href="../actualites">Actualités</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white' ?>" aria-current="page" href="../actualites">Actualités</a>
             </li>
         <?php
         } elseif ($flux === 'culture') { ?>
             <li class="nav-item">
-                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../culture">Culture</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white' ?>" href="../culture">Culture</a>
             </li>
         <?php
         } elseif ($flux === 'pixels') { ?>
             <li class="nav-item">
-                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../pixels">Pixels</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white' ?>" href="../pixels">Pixels</a>
             </li>
         <?php
         } elseif ($flux === 'economie') { ?>
             <li class="nav-item">
-                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../economie">Economie</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white' ?>" href="../economie">Economie</a>
             </li>
         <?php
         } elseif ($flux === 'sport') { ?>
             <li class="nav-item">
-                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../sport">Sport</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white' ?>" href="../sport">Sport</a>
             </li>
     <?php
         }
     } ?>
     <li class="nav-item">
-        <a class="nav-link" href="../parametres"><img src=<?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo '../assets/img/adjustWhite.png' ; else echo '../assets/img/adjust.png'?> alt=""></a>
+        <a class="nav-link" href="../parametres"><img src=<?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo '../assets/img/adjustWhite.png';
+                                                            else echo '../assets/img/adjust.png' ?> alt=""></a>
     </li>
     <?php
 }
@@ -378,20 +379,17 @@ function displayhome($param)
             //Vérifie si la catégorie est dans le tableau
             if (array_key_exists($category, $categorycolorarray)) {
                 $categorycolor = $categorycolorarray[$category];
-            }
-            else {
+            } else {
                 $categorycolor = 'purple';
                 $category = 'other';
             }
             if (isset($_COOKIE['user']['mode'])) {
                 if ($_COOKIE['user']['mode'] === 'light') {
                     $background = '#f5f5f5';
-                }
-                else {
+                } else {
                     $background = '#444';
                 }
-            }
-            else {
+            } else {
                 $background = '#f5f5f5';
             }
 
