@@ -99,27 +99,27 @@ border: 2px solid red;
 }
 
 .btn-actualites:hover{
-    background-color: #f5f5f5;
+    background-color: #cecbcb;
     color: red;
 }
 .btn-culture:hover{
-    background-color: #f5f5f5;
+    background-color: #cecbcb;
     color: green;
 }
 .btn-sport:hover{
-    background-color: #f5f5f5;
+    background-color: #cecbcb;
     color: orange;
 }
 .btn-pixels:hover{
-    background-color: #f5f5f5;
+    background-color: #cecbcb;
     color: blueviolet;
 }
 .btn-economie:hover{
-    background-color: #f5f5f5;
+    background-color: #cecbcb;
     color: blue;
 }
 .btn-other:hover{
-    background-color: #f5f5f5;
+    background-color: #cecbcb;
     color: purple;
 }
 
