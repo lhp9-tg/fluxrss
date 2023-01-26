@@ -202,6 +202,22 @@ footer {
     text-decoration: underline;
 }
 
+.linkCarousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 3em;
+    background-color: #000;
+}
+
+.linkCarousel1,
+.linkCarousel2,
+.linkCarousel3 {
+    display: block;
+    text-decoration: none;
+    color: #f5f5f5;
+}
 
 
 
