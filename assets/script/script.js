@@ -9,7 +9,8 @@ setTimeout(function() {
     imgCarousel2.src = imgArticle[1].currentSrc;
     imgCarousel3.src = imgArticle[2].currentSrc;
 
-    let linkArticle = document.querySelectorAll('.title');
+let linkArticle = document.querySelectorAll('.title');
+
 
     let linkCarousel1 = document.querySelector('.linkCarousel1');
     let linkCarousel2 = document.querySelector('.linkCarousel2');
