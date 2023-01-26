@@ -10,13 +10,17 @@ body {
     object-fit: cover;
     filter: brightness(0.7);
 }
-
+nav {
+    border-top: 1px solid white;
+}
 nav img {
     height: 1.5em;
     cursor: pointer;
     filter: brightness(0.7);
 }
-
+.navbar-toggler {
+   background-color: white;
+}
 .actus{
     height: auto;
     border-left: 5px solid red;
