@@ -12,6 +12,7 @@ setTimeout(function() {
 
 let linkArticle = document.querySelectorAll('.title');
 
+
 let linkCarousel1 = document.querySelector('.linkCarousel1');
 let linkCarousel2 = document.querySelector('.linkCarousel2');
 let linkCarousel3 = document.querySelector('.linkCarousel3');
