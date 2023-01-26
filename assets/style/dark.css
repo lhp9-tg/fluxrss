@@ -159,6 +159,25 @@ footer {
     text-decoration: underline;
     color: #f5f5f5;
 }
+
+.linkCarousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 3em;
+    background-color: #000;
+    text-align: center;
+}
+
+.linkCarousel1,
+.linkCarousel2,
+.linkCarousel3 {
+    display: block;
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
 @media (min-width: 1024px) {
     .carousel img {
         height: auto;
