@@ -19,7 +19,7 @@
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="imgCarousel1" src="../assets/img/newspaper-g7efb334a0_640.jpg" class="d-block w-100" alt="...">
+                <img class="imgCarousel1" src="" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
                 <img class="imgCarousel2" src="../assets/img/businessman-g04317133a_640.jpg" class="d-block w-100" alt="...">
@@ -37,21 +37,20 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-<?php 
+    <?php
 
-include('../views/includes/navbar.php');
+    include('../views/includes/navbar.php');
 
-if (isset($_COOKIE['user']['flux'])) {
-    displayhome(unserialize($_COOKIE['user']['flux']));
-}
-else {
-    $fluxdefault = ['actualites', 'culture', 'pixels'];
-    displayhome($fluxdefault);
-}
+    if (isset($_COOKIE['user']['flux'])) {
+        displayhome(unserialize($_COOKIE['user']['flux']));
+    } else {
+        $fluxdefault = ['actualites', 'culture', 'pixels'];
+        displayhome($fluxdefault);
+    }
 
     ?>
     <footer>
-        <p class="mb-0 text-center">© 2023 </p>       
+        <p class="mb-0 text-center">© 2023 </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
