@@ -53,7 +53,7 @@
             <fieldset>
                 <legend>Nombre d'articles affichés par page</legend>
 
-                <input class="me-2" type="radio" name="article" value="six" id="six" <?php if (isset($_COOKIE['user']['article']) && ($_COOKIE['user']['article'] === 'six')) echo 'checked' ?>><label for="light"> 6 articles / pages </label><br>
+                <input class="me-2" type="radio" name="article" value="six" id="six" <?php if (isset($_COOKIE['user']['article']) && ($_COOKIE['user']['article'] === 'six')) echo 'checked' ?>><label for="six"> 6 articles / pages </label><br>
                 <input class="me-2" type="radio" name="article" value="nine" id="nine" <?php if (isset($_COOKIE['user']['article']) && ($_COOKIE['user']['article'] === 'nine')) echo 'checked' ?>><label for="nine"> 9 articles / pages </label><br>
                 <input class="me-2" type="radio" name="article" value="twelve" id="twelve" <?php if (isset($_COOKIE['user']['article']) && ($_COOKIE['user']['article'] === 'twelve')) echo 'checked' ?>><label for="twelve"> 12 articles / pages </label><br>
 
