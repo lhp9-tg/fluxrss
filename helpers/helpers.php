@@ -6,33 +6,34 @@ function navbarlist($param)
     foreach ($param as $flux) {
         if ($flux === 'actualites') { ?>
             <li class="nav-item ">
-                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" aria-current="page" href="../actualites">Actualités</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white' ?>" aria-current="page" href="../actualites">Actualités</a>
             </li>
         <?php
         } elseif ($flux === 'culture') { ?>
             <li class="nav-item">
-                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../culture">Culture</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white' ?>" href="../culture">Culture</a>
             </li>
         <?php
         } elseif ($flux === 'pixels') { ?>
             <li class="nav-item">
-                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../pixels">Pixels</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white' ?>" href="../pixels">Pixels</a>
             </li>
         <?php
         } elseif ($flux === 'economie') { ?>
             <li class="nav-item">
-                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../economie">Economie</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white' ?>" href="../economie">Economie</a>
             </li>
         <?php
         } elseif ($flux === 'sport') { ?>
             <li class="nav-item">
-                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white'?>" href="../sport">Sport</a>
+                <a class="nav-link <?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo 'text-white' ?>" href="../sport">Sport</a>
             </li>
     <?php
         }
     } ?>
     <li class="nav-item">
-        <a class="nav-link" href="../parametres"><img src=<?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo '../assets/img/adjustWhite.png' ; else echo '../assets/img/adjust.png'?> alt=""></a>
+        <a class="nav-link" href="../parametres"><img src=<?php if (isset($_COOKIE['user']['mode']) && $_COOKIE['user']['mode'] === 'dark') echo '../assets/img/adjustWhite.png';
+                                                            else echo '../assets/img/adjust.png' ?> alt=""></a>
     </li>
     <?php
 }
@@ -70,7 +71,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                 <div class="actus-article col-12 col-lg-8 mt-3">
                 <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $newDate . '</p>
-                    <button type="button" class="btn-actualites btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn-actualites btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#modal' . $i . '">
                     Voir plus
                     </button>
             </div>
@@ -80,7 +81,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
 
 
         <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal' . $i . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
@@ -92,7 +93,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
 ' . $item->description . '
 </div>
 <div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+<button type="button" class="btn-actualites btn " data-bs-dismiss="modal"><a class="title " href="' . $item->link . '" target="_blank">Voir article</a></button>
 
 </div>
 </div>
@@ -112,7 +113,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                        <button type="button" class="btn-culture btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn-culture btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#modal' . $i . '">
                             Voir plus
                             </button>
                     </div>
@@ -122,7 +123,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
 
 
                 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="modal' . $i . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -134,7 +135,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
         ' . $item->description . '
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+        <button type="button" class="btn-culture btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
 
       </div>
     </div>
@@ -154,7 +155,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                        <button type="button" class=" btn-pixels btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn-pixels btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#modal' . $i . '">
                         Voir plus
                         </button>
                 </div>
@@ -164,7 +165,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
 
 
             <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="modal' . $i . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
   <div class="modal-header">
@@ -176,7 +177,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
     ' . $item->description . '
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+    <button type="button" class="btn-pixels btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
 
   </div>
 </div>
@@ -196,7 +197,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                        <button type="button" class="btn-economie btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn-economie btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#modal' . $i . '">
                         Voir plus
                         </button>
                 </div>
@@ -206,7 +207,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
 
 
             <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="modal' . $i . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
   <div class="modal-header">
@@ -218,7 +219,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
     ' . $item->description . '
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+    <button type="button" class="btn-economie btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
 
   </div>
 </div>
@@ -239,7 +240,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
                     <div class="actus-article col-12 col-lg-8 mt-3">
                     <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                         <p class="date text-center">' . $newDate . '</p>
-                        <button type="button" class="btn-sport btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn-sport btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#modal' . $i . '">
                         Voir plus
                         </button>
                 </div>
@@ -249,7 +250,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
 
 
             <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="modal' . $i . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
   <div class="modal-header">
@@ -261,7 +262,7 @@ function rss_reader($rss_feed) // Fonction qui prend en paramètre l'URL du flux
     ' . $item->description . '
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
+    <button type="button" class="btn-sport btn btn-secondary" data-bs-dismiss="modal"><a class="title" href="' . $item->link . '" target="_blank">Voir article</a></button>
 
   </div>
 </div>
@@ -378,20 +379,17 @@ function displayhome($param)
             //Vérifie si la catégorie est dans le tableau
             if (array_key_exists($category, $categorycolorarray)) {
                 $categorycolor = $categorycolorarray[$category];
-            }
-            else {
+            } else {
                 $categorycolor = 'purple';
                 $category = 'other';
             }
             if (isset($_COOKIE['user']['mode'])) {
                 if ($_COOKIE['user']['mode'] === 'light') {
                     $background = '#f5f5f5';
-                }
-                else {
+                } else {
                     $background = '#444';
                 }
-            }
-            else {
+            } else {
                 $background = '#f5f5f5';
             }
 
@@ -404,7 +402,7 @@ function displayhome($param)
                 <div class="actus-article col-12 col-lg-8">
                 <p class="text-center"> <a class="title" href="' . $item->link . '" target="_blank">' . $item->title . '</a></p>
                     <p class="date text-center">' . $newDate . '</p>
-                    <button type="button" class="btn-'.$category.' btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn-' . $category . ' btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Voir plus
                     </button>
             </div>
