@@ -209,6 +209,7 @@ footer {
     height: auto;
     min-height: 3em;
     background-color: #000;
+    text-align: center;
 }
 
 .linkCarousel1,

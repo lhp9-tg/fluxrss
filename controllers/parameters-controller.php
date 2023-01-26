@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $message = 'Vous n\'avez pas choisi assez de flux. Vous devez choisir 3 flux';
         }
         else {
-            setcookie('user[flux]', serialize($fluxchosen), time() + 24*3600);
+            setcookie('user[flux]', serialize($fluxchosen), time() + 24*3600, '/');
             header ('Location: ../controllers/parameters-controller.php');
             $message = 'Vous avez choisi les flux suivants : <br>';
             foreach ($fluxchosen as $flux) {
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         else {
             $mode = $_POST['mode'];
-            setcookie('user[mode]', $mode, time() + 24*3600);
+            setcookie('user[mode]', $mode, time() + 24*3600, '/');
             header ('Location: ../controllers/parameters-controller.php');
         }
     }
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         else {
             $article = $_POST['article'];
-            setcookie('user[article]', $article, time() + 24*3600);
+            setcookie('user[article]', $article, time() + 24*3600, '/');
             header ('Location: ../controllers/parameters-controller.php');
         }
     }
