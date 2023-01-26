@@ -134,6 +134,31 @@ border: 2px solid red;
     align-items: center;
 }
 
+.modalink-economie {
+    color: white;
+    text-decoration: none;
+}
+
+.modalink-culture {
+    color: white;
+    text-decoration: none;
+}
+.modalink-sport {
+    color: white;
+    text-decoration: none;
+}
+.modalink-pixels {
+    color: white;
+    text-decoration: none;
+}
+.modalink-actualites {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
 .arrow {
     height: 2em;
     width: 2em;
